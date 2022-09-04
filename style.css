@@ -17,4 +17,150 @@ body {
   font-size: 1.8rem;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
+  padding: 2rem;
+  color: var(--Very-Dark-Blue);
+}
+h1,
+h2,
+h3 {
+  color: var(--Very-Dark-Violet);
+  font-weight: 700;
+}
+h1 {
+  font-size: 5rem;
+  line-height: 1;
+}
+p {
+  color: var(--Grayish-Violet);
+}
+ul {
+  list-style: none;
+}
+button {
+  background: var(--Cyan);
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding: 0.8em 1.5em;
+  border-radius: 1.5em;
+  font-weight: 700;
+}
+.hamburger {
+  background: transparent;
+}
+/* 
+====================
+====================
+    navigation 
+====================
+====================
+*/
+nav {
+  margin-bottom: 5rem;
+}
+.nav-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links,
+.sign-ups-container {
+  display: none;
+}
+/* 
+====================
+====================
+    main 
+====================
+====================
+*/
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7rem;
+  margin-bottom: 5rem;
+}
+/* 
+====================
+====================
+    hero section 
+====================
+====================
+*/
+.hero-section {
+  text-align: center;
+}
+.hero-section img {
+  width: min(100%, 60rem);
+}
+/* 
+====================
+====================
+    link shortener section 
+====================
+====================
+*/
+.link-shortner-section {
+  width: 100%;
+  background: var(--Dark-Violet);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.link-field-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.link-field-container div {
+  width: 100%;
+}
+.link-shortner-section input {
+  width: 100%;
+  padding: 0.5em 1em;
+}
+.link-shortner-section p {
+  color: var(--Red);
+  font-size: 1.2rem;
+}
+.link-shortner-section button {
+  width: min(100%, 20rem);
+  border-radius: 0.3em;
+}
+/* 
+====================
+====================
+    stats section 
+====================
+====================
+*/
+.statistics-section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.statistics-section div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.stat-card {
+  width: min(100%, 40rem);
+  box-shadow: 1rem 1rem 10rem rgba(0, 0, 0, 0.055);
+  border-radius: 1em;
+  padding: 2rem;
+}
+.stat-img {
+  width: 8rem;
+  height: 8rem;
+  background: var(--Dark-Violet);
+  padding: 2rem;
+  border-radius: 50%;
 }
