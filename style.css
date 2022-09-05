@@ -14,6 +14,8 @@
   --Very-Dark-Violet: hsl(260, 8%, 14%);
   --max-element-width: min(90%, 80rem);
   --element-border-radius: 0.4em;
+  --transition: 0.5s ease-in-out;
+  --fast-transition: 0.2s ease-in-out;
 }
 body {
   font-size: 1.8rem;
@@ -142,13 +144,22 @@ main {
   padding: 0.9em 1em;
   border-radius: var(--element-border-radius);
   border: none;
+  transition: var(--transition);
+}
+.input-error {
+  outline: 0.3rem solid var(--Red);
 }
 .link-shortner-section input:focus {
   outline: 0.3rem solid var(--Cyan);
 }
-.link-shortner-section p {
+.error-message {
   color: var(--Red);
   font-size: 1.2rem;
+  opacity: 0;
+  transition: var(--transition);
+}
+.show-error-message {
+  opacity: 1;
 }
 .link-shortner-section button {
   width: min(100%, 20rem);
@@ -199,6 +210,17 @@ main {
 }
 .copy-btn {
   width: min(70%);
+  transition: var(--fast-transition);
+}
+.copy-btn:focus {
+  background: var(--Dark-Violet);
+}
+.copy-btn::after {
+  content: "Copy";
+  font-size: 1.8rem;
+}
+.copy-btn:focus::after {
+  content: "Copied !";
 }
 /* 
 ====================
