@@ -25,6 +25,7 @@ const getLink = async () => {
   `;
 
   copyBtnsListeners();
+  linkInputField.value = "";
 };
 
 /** throw input error */
