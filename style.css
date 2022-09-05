@@ -12,12 +12,14 @@
   --Grayish-Violet: hsl(257, 7%, 63%);
   --Very-Dark-Blue: hsl(255, 11%, 22%);
   --Very-Dark-Violet: hsl(260, 8%, 14%);
+  --max-element-width: min(90%, 80rem);
+  --element-border-radius: 0.4em;
 }
 body {
   font-size: 1.8rem;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
-  padding: 2rem;
+  /* padding: 2rem; */
   color: var(--Very-Dark-Blue);
 }
 h1,
@@ -45,6 +47,9 @@ button {
   border-radius: 1.5em;
   font-weight: 700;
 }
+li {
+  cursor: pointer;
+}
 .hamburger {
   background: transparent;
 }
@@ -57,8 +62,11 @@ button {
 */
 nav {
   margin-bottom: 5rem;
+  padding: 2rem 0rem;
 }
 .nav-center {
+  width: 90%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,6 +74,9 @@ nav {
 .nav-links,
 .sign-ups-container {
   display: none;
+}
+.hamburger {
+  padding: 0;
 }
 /* 
 ====================
@@ -75,11 +86,14 @@ nav {
 ====================
 */
 main {
+  width: min(90%, 80rem);
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 7rem;
   margin-bottom: 5rem;
+  /* background: var(--Gray); */
 }
 /* 
 ====================
@@ -104,7 +118,7 @@ main {
 .link-shortner-section {
   width: 100%;
   background: var(--Dark-Violet);
-  border-radius: 1rem;
+  border-radius: var(--element-border-radius);
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -119,10 +133,18 @@ main {
 }
 .link-field-container div {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 .link-shortner-section input {
   width: 100%;
-  padding: 0.5em 1em;
+  padding: 0.9em 1em;
+  border-radius: var(--element-border-radius);
+  border: none;
+}
+.link-shortner-section input:focus {
+  outline: 0.3rem solid var(--Cyan);
 }
 .link-shortner-section p {
   color: var(--Red);
@@ -131,6 +153,52 @@ main {
 .link-shortner-section button {
   width: min(100%, 20rem);
   border-radius: 0.3em;
+}
+/* 
+====================
+====================
+    results section 
+====================
+====================
+*/
+.results-container {
+  width: min(100%, 100rem);
+  border-radius: var(--element-border-radius);
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+.result {
+  width: min(100%, 80rem);
+  box-shadow: 1rem 1rem 10rem rgba(0, 0, 0, 0.15);
+  border-radius: var(--element-border-radius);
+  background: white;
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
+  place-items: center;
+  gap: 1rem;
+}
+.original-link,
+.short-link {
+  width: 100%;
+  padding: 2rem;
+}
+.original-link {
+  width: 100%;
+  color: var(--Very-Dark-Violet);
+  border-bottom: 0.2rem solid var(--Gray);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.short-link {
+  color: var(--Cyan);
+}
+.copy-btn {
+  width: min(70%);
 }
 /* 
 ====================
@@ -154,8 +222,9 @@ main {
 .stat-card {
   width: min(100%, 40rem);
   box-shadow: 1rem 1rem 10rem rgba(0, 0, 0, 0.055);
-  border-radius: 1em;
+  border-radius: var(--element-border-radius);
   padding: 2rem;
+  background: white;
 }
 .stat-img {
   width: 8rem;
@@ -163,4 +232,84 @@ main {
   background: var(--Dark-Violet);
   padding: 2rem;
   border-radius: 50%;
+}
+/* 
+====================
+====================
+    footer section 
+====================
+====================
+*/
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  background: var(--Very-Dark-Violet);
+  color: white;
+  padding-bottom: 5rem;
+}
+/* 
+====================
+====================
+    upper footer 
+====================
+====================
+*/
+.footer-upper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--Dark-Violet);
+  padding: 8rem 0rem;
+}
+.footer-upper div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+.footer-upper h2 {
+  color: white;
+}
+/* 
+====================
+====================
+    lower footer 
+====================
+====================
+*/
+.footer-down div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+.footer-down svg path {
+  fill: white;
+}
+.footer-links-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3rem;
+  color: var(--Gray);
+  font-weight: 500;
+}
+.footer-links-container ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.footer-links-title {
+  color: white;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+.footer-socials {
+  display: flex;
+  gap: 2rem;
 }
