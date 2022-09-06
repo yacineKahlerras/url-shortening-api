@@ -92,7 +92,14 @@ linkInputField.addEventListener("input", () => inputError(false));
  * */
 const sidemenu = document.getElementById("sidemenu");
 const sidemenuBtn = document.querySelector(".hamburger");
+let sidebarActive = false;
 
-sidemenuBtn.addEventListener("click", () => {
-  sidemenu.classList.toggle("show-sidemenu");
-});
+/** shows/hides sidemenu */
+const sidemenuVisibility = (show) => {
+  if (show == true) sidemenu.classList.add("show-sidemenu");
+  if (show == false) sidemenu.classList.remove("show-sidemenu");
+};
+
+/** listeners */
+sidemenuBtn.addEventListener("click", () => sidemenuVisibility(true));
+sidemenu.addEventListener("click", () => sidemenuVisibility(false));
