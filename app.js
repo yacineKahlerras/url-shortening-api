@@ -1,4 +1,11 @@
-/** API APP */
+/**
+ * ========================
+ * ========================
+ *          API APP
+ * ========================
+ * ========================
+ * */
+
 const apiUrl = "https://api.shrtco.de/v2/shorten?url=";
 const submitLinkBtn = document.getElementById("submit-btn");
 const linkInputField = document.getElementById("link-input");
@@ -75,3 +82,17 @@ const copyToClipboard = (btn) => {
 copyBtnsListeners();
 submitLinkBtn.addEventListener("click", getLink);
 linkInputField.addEventListener("input", () => inputError(false));
+
+/**
+ * ========================
+ * ========================
+ *          sidemenu
+ * ========================
+ * ========================
+ * */
+const sidemenu = document.getElementById("sidemenu");
+const sidemenuBtn = document.querySelector(".hamburger");
+
+sidemenuBtn.addEventListener("click", () => {
+  sidemenu.classList.toggle("show-sidemenu");
+});
