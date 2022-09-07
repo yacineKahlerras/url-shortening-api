@@ -11,6 +11,8 @@ const submitLinkBtn = document.getElementById("submit-btn");
 const linkInputField = document.getElementById("link-input");
 const resultsContainer = document.querySelector(".results-container");
 const errorMessage = document.querySelector(".error-message");
+var scrollTimeout;
+let resultUpdated = false;
 
 /** get shortened link */
 const getLink = async () => {
@@ -21,10 +23,11 @@ const getLink = async () => {
   }
 
   const links = await shortenedLink(link);
+  const elementsCount = resultsContainer.childElementCount;
 
   resultsContainer.innerHTML += `
     <!-- result -->
-    <div class="result">
+    <div class="result" id="result-${elementsCount + 1}">
         <p class="original-link">${links[1]}</p>
         <p class="short-link">${links[0]}</p>
         <button class="copy-btn"></button>
@@ -33,6 +36,28 @@ const getLink = async () => {
 
   copyBtnsListeners();
   linkInputField.value = "";
+  scrollToElement(elementsCount);
+};
+
+/** scroll to new results element */
+const scrollToElement = (elementsCount) => {
+  // removes all shake elements
+  const alResults = [...resultsContainer.children];
+  alResults.forEach((elm) => {
+    elm.classList.remove("result-shake");
+    console.log(elm.tagName);
+  });
+
+  resultUpdated = true;
+  document
+    .getElementById(`result-${elementsCount + 1}`)
+    .scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+};
+
+/** shakes new result element */
+const shakeResultElement = () => {
+  const result = resultsContainer.lastElementChild;
+  result.classList.add("result-shake");
 };
 
 /** throw input error */
@@ -82,6 +107,18 @@ const copyToClipboard = (btn) => {
 copyBtnsListeners();
 submitLinkBtn.addEventListener("click", getLink);
 linkInputField.addEventListener("input", () => inputError(false));
+
+// checks if we stopped scrolling
+document.addEventListener("scroll", function (e) {
+  clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(function () {
+    if (resultUpdated) {
+      resultUpdated = false;
+      shakeResultElement();
+      console.log("Scroll ended");
+    }
+  }, 100);
+});
 
 /**
  * ========================
