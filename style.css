@@ -31,7 +31,7 @@ h3 {
   font-weight: 700;
 }
 h1 {
-  font-size: 5rem;
+  font-size: 4.2rem;
   letter-spacing: -0.2rem;
   line-height: 1;
 }
@@ -85,8 +85,8 @@ li {
 ====================
 */
 nav {
-  margin-bottom: 5rem;
-  padding: 2rem 0rem;
+  margin-bottom: 16.8rem;
+  padding: 2rem 0rem 0rem;
 }
 .nav-center {
   width: 90%;
@@ -119,8 +119,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 7rem;
-  margin-bottom: 5rem;
+  padding-bottom: 10rem;
+  position: relative;
 }
 /* 
 ====================
@@ -162,6 +162,9 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  top: 0;
+  transform: translate(0, -50%);
 }
 .link-field-container {
   width: 100%;
@@ -228,10 +231,12 @@ main {
   flex-direction: column;
   align-items: left;
   gap: 4rem;
+  margin-top: 12.6rem;
+  margin-bottom: 10rem;
 }
 .result {
   width: min(100%, 80rem);
-  box-shadow: 1rem 1rem 10rem rgba(0, 0, 0, 0.15);
+  /* box-shadow: 1rem 1rem 10rem rgba(0, 0, 0, 0.15); */
   border-radius: var(--element-border-radius);
   background: white;
   display: grid;
@@ -286,7 +291,14 @@ main {
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  align-items: center;
+  text-align: center;
+}
+.statistics-section h2 {
+  margin-bottom: 1.5rem;
+}
+.statistics-section p {
+  margin-bottom: 6rem;
 }
 .statistics-section div {
   display: flex;
@@ -294,19 +306,26 @@ main {
   align-items: center;
   gap: 2rem;
 }
+.statistics-section > div {
+  gap: 9.2rem;
+}
 .stat-card {
   width: min(100%, 40rem);
   box-shadow: 1rem 1rem 10rem rgba(0, 0, 0, 0.055);
   border-radius: var(--element-border-radius);
   padding: 2rem;
   background: white;
+  position: relative;
 }
 .stat-img {
-  width: 8rem;
-  height: 8rem;
+  width: 8.8rem;
+  height: 8.8rem;
   background: var(--Dark-Violet);
   padding: 2rem;
   border-radius: 50%;
+  position: absolute;
+  top: 0;
+  transform: translate(0, -50%);
 }
 .stat-card::after {
   content: "";
@@ -317,6 +336,9 @@ main {
 }
 .stat-card:last-of-type::after {
   display: none;
+}
+.stat-card h3 {
+  margin-top: 7.5rem;
 }
 /* 
 ====================
