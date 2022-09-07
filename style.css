@@ -21,7 +21,6 @@ body {
   font-size: 1.8rem;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
-  /* padding: 2rem; */
   color: var(--Very-Dark-Blue);
 }
 h1,
@@ -32,10 +31,13 @@ h3 {
 }
 h1 {
   font-size: 5rem;
+  letter-spacing: -0.2rem;
   line-height: 1;
 }
 p {
+  width: min(80%, 80rem);
   color: var(--Grayish-Violet);
+  text-align: center;
 }
 ul {
   list-style: none;
@@ -45,8 +47,9 @@ button {
   border: none;
   cursor: pointer;
   color: white;
-  padding: 0.8em 1.5em;
+  padding: 0.8em 5rem;
   border-radius: 1.5em;
+  font-size: 1.8rem;
   font-weight: 700;
 }
 li {
@@ -87,6 +90,7 @@ nav {
 .nav-center {
   width: 90%;
   margin: 0 auto;
+  margin-bottom: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -106,6 +110,9 @@ nav {
 ====================
 */
 main {
+  background: var(--Gray);
+}
+.main-center {
   width: min(90%, 80rem);
   margin: 0 auto;
   display: flex;
@@ -113,7 +120,6 @@ main {
   align-items: center;
   gap: 7rem;
   margin-bottom: 5rem;
-  /* background: var(--Gray); */
 }
 /* 
 ====================
@@ -124,9 +130,18 @@ main {
 */
 .hero-section {
   text-align: center;
+  overflow-x: hidden;
 }
 .hero-section img {
-  width: min(100%, 60rem);
+  width: min(130%, 80rem);
+  transform: translate(5%, 0);
+  margin-bottom: 4rem;
+}
+.hero-section div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 /* 
 ====================
@@ -152,7 +167,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 .link-field-container div {
   width: 100%;
@@ -162,10 +177,11 @@ main {
 }
 .link-shortner-section input {
   width: 100%;
-  padding: 0.9em 1em;
+  padding: 1.2em 1em;
   border-radius: var(--element-border-radius);
   border: none;
   transition: var(--transition);
+  margin-bottom: 0.5rem;
 }
 .link-shortner-section input::placeholder {
   color: var(--Gray);
@@ -177,7 +193,7 @@ main {
   outline: 0.3rem solid var(--Red);
 }
 .link-shortner-section .input-error::placeholder {
-  color: var(--Red);
+  color: rgba(255, 0, 0, 0.45);
 }
 .link-shortner-section input:focus {
   outline: 0.3rem solid var(--Cyan);
@@ -187,12 +203,13 @@ main {
   font-size: 1.2rem;
   opacity: 0;
   transition: var(--transition);
+  text-align: left;
 }
 .show-error-message {
   opacity: 1;
 }
 .link-shortner-section button {
-  width: min(100%, 20rem);
+  width: min(100%, 40rem);
   border-radius: 0.3em;
 }
 /* 
@@ -208,7 +225,7 @@ main {
   background: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   gap: 4rem;
 }
 .result {
@@ -220,16 +237,16 @@ main {
   grid-template-columns: 100%;
   align-items: center;
   place-items: center;
-  gap: 1rem;
   padding-bottom: 2rem;
 }
 .result-shake {
-  animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 .original-link,
 .short-link {
   width: 100%;
-  padding: 2rem;
+  padding: 1.5rem;
+  text-align: left;
 }
 .original-link {
   width: 100%;
@@ -243,7 +260,7 @@ main {
   color: var(--Cyan);
 }
 .copy-btn {
-  width: min(90%, 40rem);
+  width: min(95%, 50rem);
   transition: var(--fast-transition);
   border-radius: var(--element-border-radius);
 }
