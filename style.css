@@ -123,6 +123,9 @@ main {
 .link-shortner-section {
   width: 100%;
   background: var(--Dark-Violet);
+  background-image: url("./images/bg-shorten-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top 0 right 0;
   border-radius: var(--element-border-radius);
   padding: 2rem;
   display: flex;
@@ -149,8 +152,17 @@ main {
   border: none;
   transition: var(--transition);
 }
+.link-shortner-section input::placeholder {
+  color: var(--Gray);
+  font-weight: 500;
+  font-size: 1.8rem;
+  transition: var(--transition);
+}
 .input-error {
   outline: 0.3rem solid var(--Red);
+}
+.link-shortner-section .input-error::placeholder {
+  color: var(--Red);
 }
 .link-shortner-section input:focus {
   outline: 0.3rem solid var(--Cyan);
@@ -194,6 +206,7 @@ main {
   align-items: center;
   place-items: center;
   gap: 1rem;
+  padding-bottom: 2rem;
 }
 .original-link,
 .short-link {
@@ -203,7 +216,7 @@ main {
 .original-link {
   width: 100%;
   color: var(--Very-Dark-Violet);
-  border-bottom: 0.2rem solid var(--Gray);
+  border-bottom: 0.1rem solid var(--Gray);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -212,8 +225,9 @@ main {
   color: var(--Cyan);
 }
 .copy-btn {
-  width: min(70%);
+  width: min(90%, 40rem);
   transition: var(--fast-transition);
+  border-radius: var(--element-border-radius);
 }
 .copy-btn:focus {
   background: var(--Dark-Violet);
@@ -258,6 +272,16 @@ main {
   padding: 2rem;
   border-radius: 50%;
 }
+.stat-card::after {
+  content: "";
+  position: absolute;
+  height: 40rem;
+  border-right: 1rem solid var(--Cyan);
+  z-index: -5;
+}
+.stat-card:last-of-type::after {
+  display: none;
+}
 /* 
 ====================
 ====================
@@ -288,6 +312,9 @@ footer {
   align-items: center;
   background: var(--Dark-Violet);
   padding: 8rem 0rem;
+  background-image: url("./images/bg-boost-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top 0 right 0;
 }
 .footer-upper div {
   display: flex;
