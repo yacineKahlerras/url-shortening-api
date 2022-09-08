@@ -18,7 +18,7 @@ let resultUpdated = false;
 const getLink = async () => {
   const link = linkInputField.value;
   if (!link) {
-    inputError(true);
+    inputError(true, "Please add a link");
     return;
   }
 
@@ -61,9 +61,10 @@ const shakeResultElement = () => {
 };
 
 /** throw input error */
-const inputError = (show) => {
+const inputError = (show, message) => {
   if (show) {
     errorMessage.classList.add("show-error-message");
+    errorMessage.textContent = message;
     linkInputField.classList.add("input-error");
   } else {
     errorMessage.classList.remove("show-error-message");
@@ -81,9 +82,14 @@ const shortenedLink = async (link) => {
 /** fetch data */
 const fetchData = async (url) => {
   let response = await fetch(`${apiUrl}${url}`, { cache: "no-cache" }).catch(
-    (err) => console.log(err)
+    () => {
+      console.log("error");
+    }
   );
+  if (!response.ok)
+    throw Error(inputError(true, "Invalid Link, please check its format"));
   if (response) return response.json();
+  inputError(true, "Invalid Link");
   return response;
 };
 
