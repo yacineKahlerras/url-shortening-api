@@ -442,6 +442,9 @@ main {
   padding: 2rem;
   background: white;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .stat-img {
   width: 8.8rem;
@@ -458,6 +461,7 @@ main {
 .stat-card::before {
   content: "";
   position: absolute;
+  top: 100%;
   height: 40rem;
   border-right: 1rem solid var(--Cyan);
   z-index: -5;
