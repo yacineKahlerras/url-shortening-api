@@ -145,6 +145,7 @@ nav {
   }
   nav {
     padding: 4.8rem 16.5rem 0rem;
+    margin-bottom: 12.3rem;
   }
   nav p:hover {
     color: var(--Dark-Violet);
@@ -214,12 +215,15 @@ main {
     grid-column: 1;
     grid-row: 1;
     align-items: baseline;
+    gap: 0;
   }
   .hero-section h1 {
     font-size: 8rem;
+    margin-bottom: 1.5rem;
   }
   .hero-section p {
     text-align: left;
+    margin-bottom: 3.9rem;
   }
 }
 /* 
@@ -448,6 +452,8 @@ main {
   position: absolute;
   top: 0;
   transform: translate(0, -50%);
+  display: grid;
+  place-items: center;
 }
 .stat-card::before {
   content: "";
@@ -627,7 +633,7 @@ footer {
   footer li:hover:not(.footer-links-title) {
     color: var(--Cyan);
   }
-  footer li svg path {
+  .footer-down li:hover svg path {
     fill: var(--Cyan);
   }
 }
