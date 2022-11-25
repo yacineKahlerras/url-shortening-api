@@ -17,6 +17,8 @@
   --element-border-radius: 0.4em;
   --transition: 0.5s ease-in-out;
   --fast-transition: 0.2s ease-in-out;
+
+  --elements-width-1: min(90%, 111rem);
 }
 body {
   font-size: 1.8rem;
@@ -121,8 +123,8 @@ nav {
     display: flex;
   }
   .nav-center {
-    width: 100%;
-    margin: 0;
+    width: var(--elements-width-1);
+    margin: 0 auto;
     margin-bottom: 7.9rem;
   }
   .nav-center div {
@@ -145,7 +147,7 @@ nav {
     padding: 1rem 2.4rem;
   }
   nav {
-    padding: 4.8rem 16.5rem 0rem;
+    padding-top: 4.8rem;
     margin-bottom: 12.3rem;
   }
   nav p:hover {
@@ -201,6 +203,8 @@ main {
 }
 @media (min-width: 62.5em) {
   .hero-section {
+    width: var(--elements-width-1);
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 2fr 1.5fr;
     text-align: left;
